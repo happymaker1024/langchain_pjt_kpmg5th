@@ -31,7 +31,7 @@ if __name__ == "__main__":
     search_query = "MSFT"
 
     # 서치 목록 만들기
-    search_data = search_compay(search_query)
+    # search_data = search_compay(search_query)
     # print(search_data)
     hits = search_compay(search_query)['hits']  # hits 키로 데이터 목록이 만들어져 있음
     # # print(hits)

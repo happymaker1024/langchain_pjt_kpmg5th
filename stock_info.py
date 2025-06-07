@@ -15,17 +15,18 @@ class Stock:
     
     # 재무제표 수집 함수
     def get_financial_statement(self):
-        # 재무제표를 마크다운 형식으로 변환
+        # 재무제표 최근 4년, 마크다운 형식으로 변환
         income_stmt = self.ticker.income_stmt.loc[['Total Revenue', 'Gross Profit', 
-                                                     'Operating Income', 'Net Income']].to_markdown()
+                                                     'Operating Income', 'Net Income']].iloc[:, :4].to_markdown()
         # 대차대조표를 마크다운 형식으로 변환
         balance_sheet = self.ticker.balance_sheet.loc[['Total Assets', 
                                                        'Total Liabilities Net Minority Interest',
-                                                       'Stockholders Equity']].to_markdown()
+                                                       'Stockholders Equity']].iloc[:, :4].to_markdown()
         # 현금 흐름표를 마크다운 형식으로 변환
         cash_flow = self.ticker.cashflow.loc[['Operating Cash Flow', 
                                               'Investing Cash Flow',
-                                              'Financing Cash Flow']].to_markdown()
+                                              'Financing Cash Flow']].iloc[:, :4].to_markdown()
+        print(income_stmt)
         return f"""
             ### 손익계산서
             {income_stmt}
@@ -38,9 +39,9 @@ class Stock:
     # 주식 거래량
     def get_stock_volume(self):
         # 최근 3개월간의 거래량을 가져옴
-        volume_data = self.ticker.history(period='3mo')['Volume']
+        volume_data = self.ticker.history(period='6mo')['Volume']
         volume_data_desc = volume_data.sort_index(ascending=False)
-        print(volume_data_desc)   
+        # print(volume_data_desc)   
         return volume_data_desc
     
 # 현재의 모듈에서 실행함

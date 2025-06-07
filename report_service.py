@@ -45,8 +45,8 @@ def investment_report(company, symbol):
     # company = "MicroSoft"
     # symbol = "MSFT"  # stock의 symbol 정보
 
-    company = "Apple Inc"
-    symbol = "AAPL"
+    company = company
+    symbol = symbol
     # 기본정보 :  basic_info
     # 재무제표: finacial_statement
 
@@ -58,7 +58,7 @@ def investment_report(company, symbol):
         "basic_info": stock.get_basic_info(),
         # 재무제표: finacial_statement
         "finacial_statement" : stock.get_financial_statement()
-                }
+    }
 
     response = chain.invoke(req_value)
 
