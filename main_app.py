@@ -1,6 +1,7 @@
 # streamlit run main_app.py
 import streamlit as st
 from report_service import investment_report
+from stock_info import Stock
 
 st.title("AI 투자 보고서 생성 서비스")
 st.text_input("회사명", "Apple Inc")
@@ -20,8 +21,9 @@ tab1, tab2 = st.tabs(tabs)
 # 주식 거래량 시각화
 with tab1:
     st.header(f"{compay} 주식 정보")
-    st.text("주식 거래량 시각화는 아직 구현되지 않았습니다.")
-    # 여기에 주식 거래량 시각화 코드를 추가할 수 있습니다.
+    stock = Stock(symbol)
+    volume = stock.get_stock_volume()
+    st.line_chart(volume, use_container_width=True)
 
 with tab2:
     st.header(f"{compay} 투자보고서 생성")

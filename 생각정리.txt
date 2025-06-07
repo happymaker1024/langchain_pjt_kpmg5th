@@ -6,3 +6,7 @@ report_service.py
 
 1단계 streamlit 앱 구현
 2단계 streamlit 틀 만들기
+
+04.검색인덱싱.ipynb 인덱싱하기
+
+main_app.py 목록 가져오기

@@ -1,3 +1,7 @@
+dumps/
+data.ms/
+meilisearch.exe
+생각정리.txt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

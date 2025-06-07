@@ -39,7 +39,9 @@ class Stock:
     def get_stock_volume(self):
         # 최근 3개월간의 거래량을 가져옴
         volume_data = self.ticker.history(period='3mo')['Volume']
-        return volume_data
+        volume_data_desc = volume_data.sort_index(ascending=False)
+        print(volume_data_desc)   
+        return volume_data_desc
     
 # 현재의 모듈에서 실행함
 if __name__ == "__main__":
