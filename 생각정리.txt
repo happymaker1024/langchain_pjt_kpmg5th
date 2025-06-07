@@ -3,3 +3,6 @@
 stock_info.py 작성
 03.사용자프롬프트작성.ipynb
 report_service.py
+
+1단계 streamlit 앱 구현
+2단계 streamlit 틀 만들기
