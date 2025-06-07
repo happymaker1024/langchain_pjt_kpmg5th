@@ -19,12 +19,12 @@ tab1, tab2 = st.tabs(tabs)
 
 # 주식 거래량 시각화
 with tab1:
-    st.header(f"{company_selected} 주식 정보")
+    st.header(f"{compay} 주식 정보")
     st.text("주식 거래량 시각화는 아직 구현되지 않았습니다.")
     # 여기에 주식 거래량 시각화 코드를 추가할 수 있습니다.
 
 with tab2:
-    st.header(f"{company_selected} 투자보고서 생성")
+    st.header(f"{compay} 투자보고서 생성")
 
     if st.button("투자 보고서 생성"):
         with st.spinner(text="투자 보고서 생성 중..."):
